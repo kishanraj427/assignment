@@ -1,3 +1,4 @@
+import 'package:assignment/apis/send_fcm.dart';
 import 'package:assignment/screens/searchpage.dart';
 import 'package:assignment/utilites/my_icon.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,9 @@ Widget TopWidget() {
         child: AppBar(
           backgroundColor: Colors.transparent,
           leading: MyIcon(IconButton(
-              onPressed: () {},
+              onPressed: () async{
+                await sendMessage();
+              },
               icon: const Icon(
                 Icons.arrow_back_ios_new_rounded,
                 color: Colors.black,
@@ -25,7 +28,7 @@ Widget TopWidget() {
           actions: [
             MyIcon(IconButton(
                 onPressed: () {
-                  Get.to(()=>SearchPage());
+                  Get.to(() => SearchPage());
                 },
                 icon: const Icon(
                   Icons.search_rounded,
