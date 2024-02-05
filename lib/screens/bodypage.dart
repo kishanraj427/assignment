@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 Widget BodyPage() {
-  BurgerListController controller = Get.put(BurgerListController(), permanent: true);
-  return Obx(()=>ListView.builder(
+  BurgerListController controller =
+      Get.put(BurgerListController(), permanent: true);
+  return Obx(() => ListView.builder(
       padding: const EdgeInsets.only(bottom: 45),
       physics: const BouncingScrollPhysics(),
       itemCount: controller.burgerList.length,
